@@ -18,7 +18,7 @@ Before running the application, make sure you have the following installed:
  
   ```POST /upload```
 
--- Use this endpoint to upload the "License_image" and "Selfie_image" files and get the results.
+-- Use this endpoint to upload the "license_image" and "selfie_image" files and get the results.
 
 - ##### Request
 - Method: POST
@@ -52,7 +52,7 @@ The API will process the uploaded images and return the following JSON response:
 pip install -r requirements.txt
 ```
 
-4. Create a `.env` file in the project directory and set the `TESSERACT_PATH` variable to the path of your Tesseract OCR executable. For example:
+4. Copy a `.env.example` to `.env` file in the project directory and set the `TESSERACT_PATH` variable to the path of your Tesseract OCR executable. For example:
 ```
 TESSERACT_PATH=/path/to/tesseract
 ```
