@@ -117,12 +117,14 @@ class ImageApp:
         similarity_percentage = None
         age_ocr = None
 
-        if 'License_image' not in request.files or 'Selfie_image' not in request.files:
-            return jsonify({"error": "Both 'License_image' and 'Selfie_image' files are required."}), 400
+        
 
         license_image = request.files['license_image']
         selfie_image = request.files['selfie_image']
 
+        if 'license_image' not in request.files or 'selfie_image' not in request.files:
+            return jsonify({"error": "Both 'License_image' and 'Selfie_image' files are required."}), 400
+        
         if license_image and allowed_file(license_image.filename) and selfie_image and allowed_file(selfie_image.filename):
             # Generate dynamic file paths for saving the uploaded images
             filename1 = secure_filename(license_image.filename)
